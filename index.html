@@ -14,24 +14,52 @@
             <button type="button" class="button">View High Scores</button>
             <p id="countdown">Time Left: 00</p>
         </div>
-        <!-- quiz section -->
+        <!-- Welcome screen -->
         <div>
-            <section class="container">
+            <section class="welcome-container">
                 <h1 id="welcome-text">Welcome to the quiz!</h1>
                 <p id="welcome-paragraph">Press the start button to begin.</p>
                 <button type="button" id="start-button">Start</button>
             </section>
-            <!-- quiz content -->
-            <main class="container", style="visibility: hidden;">
-                <h2 id="question-text">
-                   
-                </h2>
-                <ol id="ordered-list">
-                    <li><button type="button" class="button">1. Functionality</button></li>
-                    <li><button type="button" class="button">2. Pizzazz</button></li>
-                    <li><button type="button" class="button">3. Storage</button></li>
-                    <li><button type="button" class="button">4. Structure</button></li>
-                </0l>
+            <!-- quiz screen -->
+            <main>
+               <section class="quiz-container">
+                    <h2 class="h2-text">
+                   Javascript adds ______ to an application.
+                    </h2>
+                    <ol class="ol">
+                        <li><button type="button" class="button">1. Functionality</button></li>
+                        <li><button type="button" class="button">2. Pizzazz</button></li>
+                        <li><button type="button" class="button">3. Storage</button></li>
+                         <li><button type="button" class="button">4. Structure</button></li>
+                    </0l>
+                </section>
+                <!-- quiz end screen -->
+                <section class="quiz-end-container">
+                    <h2 class="h2-text">
+                        Quiz Complete!
+                    </h2>
+                    <p id="score-text">
+                        Your score:
+                    </p>
+                    <form class= "finish-form">
+                        <p>Type initials here</p>
+                        <input type="text">
+                        <button type="button" class="button">Submit</button>
+                    </form>
+                </section>
+                <!-- High scores screen -->
+                <section class="highscores-container">
+                    <h2 class="h2-text">High Scores:</h2>
+                    <ol>
+                        <li>100 ET</li>
+                        <li>99  HT</li>
+                        <li>98  KB</li>
+                        <li>97  BT</li>
+                    </ol>
+                    <button class="highscore-buttons">Go Back</button>
+                    <button class="highscore-buttons">Clear High Scores</button>
+                </section>
             </main>
         </div>
 

@@ -8,25 +8,30 @@
   </head>
   <body>
 <!-- main outer section -->
-    <div>
+    <div id="outer-shell">
         <!-- top section -->
         <div id="top-section">
-            <button type="button">View High Scores</button>
-            <p>Time Left: 00</p>
+            <button type="button" class="button">View High Scores</button>
+            <p id="countdown">Time Left: 00</p>
         </div>
         <!-- quiz section -->
         <div>
+            <section class="container">
+                <h1 id="welcome-text">Welcome to the quiz!</h1>
+                <p id="welcome-paragraph">Press the start button to begin.</p>
+                <button type="button" id="start-button">Start</button>
+            </section>
             <!-- quiz content -->
-            <main>
+            <main class="container", style="visibility: hidden;">
                 <h2 id="question-text">
-                    What is Javascript?
+                   
                 </h2>
-                <ol>
-                    <li><button type="button">Coffee language.</button></li>
-                    <li><button type="button">Coffee language.</button></li>
-                    <li><button type="button">Coffee language.</button></li>
-                    <li><button type="button">Coffee language.</button></li>
-                </ol>
+                <ol id="ordered-list">
+                    <li><button type="button" class="button">1. Functionality</button></li>
+                    <li><button type="button" class="button">2. Pizzazz</button></li>
+                    <li><button type="button" class="button">3. Storage</button></li>
+                    <li><button type="button" class="button">4. Structure</button></li>
+                </0l>
             </main>
         </div>
 

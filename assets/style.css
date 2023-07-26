@@ -12,6 +12,10 @@
     padding: 20px;
 }
 
+.hidden {
+    display: none;
+}
+
 #welcome-text {
     color: navy;
     text-align: center;
@@ -41,7 +45,7 @@
     cursor: pointer;
 }
 
-.h2-text {
+#question-text {
     text-align: auto;
     color: navy;
     padding-top: 20px;
@@ -50,8 +54,7 @@
     
 }
 
-.welcome-container {
-    display: none;
+#welcome-container {
     margin: 150px auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -60,8 +63,7 @@
     background-color: #f0ead6;
   }
 
-  .quiz-container {
-    display: none;
+  #quiz-container {
     margin: 150px auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -88,14 +90,13 @@
     cursor: pointer;
   }
 
-  .ol {
+  #ol {
     list-style: none;
     padding: 2%;
     margin-left: 20px;
   }
 
-  .quiz-end-container {
-    display: none;
+  #quiz-end-container {
     margin: 150px auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -119,8 +120,7 @@
 
   }
 
-  .highscores-container {
-    display: block;
+  #highscores-container {
     margin: 150px auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -128,6 +128,14 @@
     height: 260px;
     background-color: #f0ead6;
 
+  }
+
+  #highscores-text {
+    text-align: auto;
+    color: navy;
+    padding-top: 20px;
+    margin-left: 20px;
+    padding-bottom: 20px;
   }
 
   .highscore-buttons {

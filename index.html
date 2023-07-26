@@ -12,30 +12,30 @@
         <!-- top section -->
         <div id="top-section">
             <button type="button" class="button">View High Scores</button>
-            <p id="countdown">Time Left: 00</p>
+            <p>Time Left: <span id="countdown">30</span></p>
         </div>
         <!-- Welcome screen -->
         <div>
-            <section class="welcome-container">
+            <section id="welcome-container">
                 <h1 id="welcome-text">Welcome to the quiz!</h1>
                 <p id="welcome-paragraph">Press the start button to begin.</p>
                 <button type="button" id="start-button">Start</button>
             </section>
             <!-- quiz screen -->
             <main>
-               <section class="quiz-container">
-                    <h2 class="h2-text">
-                   Javascript adds ______ to an application.
+               <section id="quiz-container" class="hidden">
+                    <h2 id="question-text">
+                   
                     </h2>
-                    <ol class="ol">
-                        <li><button type="button" class="button">1. Functionality</button></li>
-                        <li><button type="button" class="button">2. Pizzazz</button></li>
-                        <li><button type="button" class="button">3. Storage</button></li>
-                         <li><button type="button" class="button">4. Structure</button></li>
-                    </0l>
+                    <ol id="ol">
+                        <li><button type="button" class="button answers"></button></li>
+                        <li><button type="button" class="button answers"></button></li>
+                        <li><button type="button" class="button answers"></button></li>
+                        <li><button type="button" class="button answers"></button></li>
+                    </ol>
                 </section>
                 <!-- quiz end screen -->
-                <section class="quiz-end-container">
+                <section id="quiz-end-container" class="hidden">
                     <h2 class="h2-text">
                         Quiz Complete!
                     </h2>
@@ -49,8 +49,8 @@
                     </form>
                 </section>
                 <!-- High scores screen -->
-                <section class="highscores-container">
-                    <h2 class="h2-text">High Scores:</h2>
+                <section id="highscores-container" class="hidden">
+                    <h2 id="highscores-text">High Scores:</h2>
                     <ol>
                         <li>100 ET</li>
                         <li>99  HT</li>

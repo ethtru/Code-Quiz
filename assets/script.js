@@ -19,28 +19,40 @@ function presentQuestion(num) {
 var quizData = [
   {
     question: "Javascript adds ______ to an application.",
-    answer: "1. Functionality",
+    answer: "1. Funtionality",
     options: ["1. Functionality", "2. Pizzazz", "3. Storage", "4. Structure"],
   },
   {
-    question: "Javascript adds ______ to an application.",
-    answer: "1. Functionality",
-    options: ["1. Functionality", "2. Pizzazz", "3. Storage", "4. Structure"],
+    question: "Who created Javascript?",
+    answer: "3. Brendan Eich",
+    options: [
+      "1. Elon Musk",
+      "2. Big Bird",
+      "3. Brendan Eich",
+      "4. George Washington",
+    ],
   },
   {
-    question: "Javascript adds ______ to an application.",
-    answer: "1. Functionality",
-    options: ["1. Functionality", "2. Pizzazz", "3. Storage", "4. Structure"],
+    question: "A function within a function is called a _____.",
+    answer: "2. Method",
+    options: [
+      "1. Doubler",
+      "2. Method",
+      "3. Squared Function",
+      "4. Baby function",
+    ],
   },
   {
-    question: "Javascript adds ______ to an application.",
-    answer: "1. Functionality",
-    options: ["1. Functionality", "2. Pizzazz", "3. Storage", "4. Structure"],
+    question:
+      "You can pass ______ into a function by placing them within the paretheses.",
+    answer: "4. Parameters",
+    options: ["1. A football", "2. Gas", "3. Answers", "4. Parameters"],
   },
   {
-    question: "Javascript adds ______ to an application.",
-    answer: "1. Functionality",
-    options: ["1. Functionality", "2. Pizzazz", "3. Storage", "4. Structure"],
+    question:
+      "The link to the Javascript file should be added to the ______ of the HTML file.",
+    answer: "1. End",
+    options: ["1. End", "2. Beginning", "3. Middle", "4. Astral plane"],
   },
 ];
 
@@ -58,31 +70,26 @@ function quizBegin() {
 
 function administerQuiz() {
   presentQuestion(0);
-  //pass the question number variable rather than the actual number
-  // need to listen for answer selection and check for right or wrong
-  // if wrong ==> update time left
-  // if right ==> present next question
+  if (answer === "1. Functionality");
 }
+//pass the question number variable rather than the actual number
+// need to listen for answer selection and check for right or wrong
+// if wrong ==> update time left
+// if right ==> present next question
 
 function timer() {
-  // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
-    // As long as the `timeLeft` is greater than 1
     if (timeLeft > 1) {
-      // Set the `textContent` of `timerEl` to show the remaining seconds
       countdown.textContent = timeLeft;
-      // Decrement `timeLeft` by 1
+
       timeLeft--;
     } else if (timeLeft === 1) {
-      // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
       countdown.textContent = timeLeft;
       timeLeft--;
     } else {
-      // Once `timeLeft` gets to 0, set `countdown` to an empty string
       countdown.textContent = "0";
-      // Use `clearInterval()` to stop the timer
+
       clearInterval(timeInterval);
-      // Call the `displayMessage()` function
     }
   }, 1000);
 }

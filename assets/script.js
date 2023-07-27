@@ -6,53 +6,46 @@ var countdown = document.getElementById("countdown");
 var timeLeft = 30;
 var questionText = document.getElementById("question-text");
 var orderedList = document.getElementsByClassName("answers");
-// make a question number variable that starts at 0
-
-function presentQuestion(num) {
-  questionText.textContent = quizData[num].question;
-  quizData[num].options.forEach((elem, index) => {
-    console.log(orderedList[index]);
-    orderedList[index].textContent = elem;
-  });
-}
+// var userChoice = //????;
+var questionNumberIndex = 0;
 
 var quizData = [
   {
     question: "Javascript adds ______ to an application.",
-    answer: "1. Funtionality",
     options: ["1. Functionality", "2. Pizzazz", "3. Storage", "4. Structure"],
+    answer: "1. Functionality",
   },
   {
     question: "Who created Javascript?",
-    answer: "3. Brendan Eich",
     options: [
       "1. Elon Musk",
       "2. Big Bird",
       "3. Brendan Eich",
       "4. George Washington",
     ],
+    answer: "3. Brendan Eich",
   },
   {
     question: "A function within a function is called a _____.",
-    answer: "2. Method",
     options: [
       "1. Doubler",
       "2. Method",
       "3. Squared Function",
       "4. Baby function",
     ],
+    answer: "2. Method",
   },
   {
     question:
       "You can pass ______ into a function by placing them within the paretheses.",
-    answer: "4. Parameters",
     options: ["1. A football", "2. Gas", "3. Answers", "4. Parameters"],
+    answer: "4. Parameters",
   },
   {
     question:
       "The link to the Javascript file should be added to the ______ of the HTML file.",
-    answer: "1. End",
     options: ["1. End", "2. Beginning", "3. Middle", "4. Astral plane"],
+    answer: "1. End",
   },
 ];
 
@@ -67,15 +60,6 @@ function quizBegin() {
   timer();
   administerQuiz();
 }
-
-function administerQuiz() {
-  presentQuestion(0);
-  if (answer === "1. Functionality");
-}
-//pass the question number variable rather than the actual number
-// need to listen for answer selection and check for right or wrong
-// if wrong ==> update time left
-// if right ==> present next question
 
 function timer() {
   var timeInterval = setInterval(function () {
@@ -93,3 +77,37 @@ function timer() {
     }
   }, 1000);
 }
+
+function presentQuestion(num) {
+  questionText.textContent = quizData[num].question;
+  quizData[num].options.forEach((elem, index) => {
+    console.log(orderedList[index]);
+    orderedList[index].textContent = elem;
+  });
+}
+
+function administerQuiz() {
+  presentQuestion(questionNumberIndex);
+  for (var i = 0; i < orderedList.length; i++) {
+    orderedList[i].addEventListener("click", function (event) {
+      var button = event.target;
+      console.log(button.textContent);
+      console.log(quizData[questionNumberIndex].answer);
+      if (button.textContent === quizData[questionNumberIndex].answer) {
+        console.log("You got it right");
+      }
+      nextQuestion();
+    });
+  }
+}
+
+function nextQuestion() {
+  for (var i = 0; i < questionNumberIndex.length; i++)
+    questionNumberIndex[i].presentQuestion();
+  questionNumberIndex++;
+}
+
+//pass the question number variable rather than the actual number
+// need to listen for answer selection and check for right or wrong
+// if wrong ==> update time left
+// if right ==> present next question

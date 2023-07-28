@@ -103,6 +103,10 @@
     cursor: pointer;
   }
 
+  ul {
+    list-style: none;
+  }
+
   #ol {
     list-style: none;
     padding: 2%;

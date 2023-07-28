@@ -145,7 +145,24 @@
     padding-bottom: 20px;
   }
 
-  .highscore-buttons {
+    
+  .highscore-buttons:hover {
+    background-color: darkorange;
+    color: navy;
+    cursor: pointer;
+}
+
+#go-back-btn {
+    background-color: purple;
+    color: antiquewhite;
+    border-radius: 5px;
+    font-size: medium;
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;  
+}
+
+#clear-btn {
     background-color: purple;
     color: antiquewhite;
     border-radius: 5px;
@@ -153,10 +170,4 @@
     display: block;
     margin-left: 20px;
     margin-top: 10px;
-  }
-    
-  .highscore-buttons:hover {
-    background-color: darkorange;
-    color: navy;
-    cursor: pointer;
 }

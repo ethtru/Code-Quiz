@@ -136,4 +136,16 @@ function quizEndScreen() {
     quizEnd.classList.add("hidden");
     highScores.classList.remove("hidden");
   });
+  highScoresScreen();
+}
+
+var goBack = document.getElementById("go-back-btn");
+var clear = document.getElementById("clear-btn");
+
+function highScoresScreen() {
+    goBack.addEventListener("click", function(event) {
+        button = event.target;
+        highScores.classList.add("hidden");
+        welcomeScreen.classList.remove("hidden");
+    })
 }

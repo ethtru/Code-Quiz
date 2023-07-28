@@ -10,7 +10,6 @@ var submitBtn = document.getElementById("submit-button");
 var questionNumberIndex = 0;
 var score = document.getElementById("score-text");
 
-
 var quizData = [
   {
     question: "Javascript adds ______ to an application.",
@@ -52,12 +51,12 @@ var quizData = [
 ];
 
 var highScoreBtn = document.getElementById("high-scores-btn");
-highScoreBtn.addEventListener("click", function(event) {
-    button = event.target;
-    welcomeScreen.classList.add("hidden");
-    quizEnd.classList.add("hidden");
-    highScores.classList.remove("hidden");
-})
+highScoreBtn.addEventListener("click", function (event) {
+  button = event.target;
+  highScores.classList.remove("hidden");
+  welcomeScreen.classList.add("hidden");
+  questionNumberIndex = 0;
+});
 
 var startButton = document.getElementById("start-button");
 console.log(startButton);
@@ -88,15 +87,14 @@ function timer() {
   }, 1000);
 }
 
-
 function presentQuestion(num) {
-    const { question, options } = quizData[num];
-    questionText.textContent = question;
-  
-    for (let i = 0; i < orderedList.length; i++) {
-      orderedList[i].textContent = options[i];
-    }
+  const { question, options } = quizData[num];
+  questionText.textContent = question;
+
+  for (let i = 0; i < orderedList.length; i++) {
+    orderedList[i].textContent = options[i];
   }
+}
 
 function administerQuiz() {
   presentQuestion(questionNumberIndex);
@@ -107,17 +105,16 @@ function administerQuiz() {
 }
 
 function answerClickHandler(event) {
-      var button = event.target;
-      console.log(button.textContent);
-      console.log(quizData[questionNumberIndex].answer);
-      if (button.textContent === quizData[questionNumberIndex].answer) {
-        console.log("You got it right");
-      } else {
-        subtractTime(5);
-      }
-      nextQuestion();
-    };
-
+  var button = event.target;
+  console.log(button.textContent);
+  console.log(quizData[questionNumberIndex].answer);
+  if (button.textContent === quizData[questionNumberIndex].answer) {
+    console.log("You got it right");
+  } else {
+    subtractTime(5);
+  }
+  nextQuestion();
+}
 
 function subtractTime(seconds) {
   if (timeLeft >= seconds) {
@@ -142,10 +139,10 @@ function stopTimer() {
 }
 
 function quizEndScreen() {
-submitBtn.removeEventListener("click", answerClickHandler);  
+  submitBtn.removeEventListener("click", answerClickHandler);
   quizScreen.classList.add("hidden");
   quizEnd.classList.remove("hidden");
-  score.textContent = timeLeft + " seconds";
+  score.textContent = timeLeft;
   submitBtn.addEventListener("click", function (event) {
     button = event.target;
     quizEnd.classList.add("hidden");
@@ -158,12 +155,10 @@ var goBack = document.getElementById("go-back-btn");
 var clear = document.getElementById("clear-btn");
 
 function highScoresScreen() {
-    goBack.addEventListener("click", function(event) {
-        button = event.target;
-        highScores.classList.add("hidden");
-        welcomeScreen.classList.remove("hidden");
-        questionNumberIndex = 0;
-    })
+  goBack.addEventListener("click", function (event) {
+    button = event.target;
+    highScores.classList.add("hidden");
+    welcomeScreen.classList.remove("hidden");
+    questionNumberIndex = 0;
+  });
 }
-
-

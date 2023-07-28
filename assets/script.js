@@ -11,7 +11,6 @@ var questionNumberIndex = 0;
 var score = document.getElementById("score-text");
 var highScoresList = document.getElementById("highscores-list");
 
-
 var quizData = [
   {
     question: "Javascript adds ______ to an application.",
@@ -140,8 +139,23 @@ function stopTimer() {
   clearInterval(timeInterval);
 }
 
-
 var highScoresArray = [];
+
+submitBtn.addEventListener("click", function (event) {
+    button = event.target;
+    quizEnd.classList.add("hidden");
+    highScores.classList.remove("hidden");
+
+    var userName = document.getElementById("user-name").value;
+    console.log(userName);
+
+    var userScoreObject = {
+      userName: userName || "Anonymous",
+      timeLeft: timeLeft,
+    };
+    highScoresArray.push(userScoreObject);
+    updateHighScoreList();
+  });
 
 function quizEndScreen() {
   submitBtn.removeEventListener("click", answerClickHandler);
@@ -149,37 +163,19 @@ function quizEndScreen() {
   quizEnd.classList.remove("hidden");
   score.textContent = timeLeft;
 
- 
-  submitBtn.addEventListener("click", function (event) {
-    button = event.target;
-    quizEnd.classList.add("hidden");
-    highScores.classList.remove("hidden");
-
-    var userName = document.getElementById("user-name").value;
-
-
-    var userScoreObject = {
-        userName: userName || "Anonymous",
-        timeLeft: timeLeft
-    };
-    highScoresArray.push(userScoreObject);
-    updateHighScoreList();
-
-
-  });
   highScoresScreen();
 }
 
-
 function updateHighScoreList() {
-    highScoresList.innerHTML = "";
-    highScoresArray.forEach((userScore, index) => {
-      var listItem = document.createElement("li");
-      listItem.textContent = `${index + 1}. ${userScore.userName} - ${userScore.timeLeft} seconds`;
-      highScoresList.appendChild(listItem);
-    });
-  }
-
+  highScoresList.innerHTML = "";
+  highScoresArray.forEach((userScore, index) => {
+    var listItem = document.createElement("li");
+    listItem.textContent = `${index + 1}. ${userScore.userName} - ${
+      userScore.timeLeft
+    } seconds`;
+    highScoresList.appendChild(listItem);
+  });
+}
 
 var goBack = document.getElementById("go-back-btn");
 var clear = document.getElementById("clear-btn");

@@ -102,12 +102,10 @@ function administerQuiz() {
 }
 
 function nextQuestion() {
-  for (var i = 0; i < questionNumberIndex.length; i++)
-    questionNumberIndex[i].presentQuestion();
   questionNumberIndex++;
+  if (questionNumberIndex < quizData.length) {
+    presentQuestion(questionNumberIndex);
+  } else {
+    console.log("Quiz completed!");
+  }
 }
-
-//pass the question number variable rather than the actual number
-// need to listen for answer selection and check for right or wrong
-// if wrong ==> update time left
-// if right ==> present next question

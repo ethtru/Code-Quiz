@@ -162,6 +162,7 @@ function highScoresScreen() {
         button = event.target;
         highScores.classList.add("hidden");
         welcomeScreen.classList.remove("hidden");
+        questionNumberIndex = 0;
     })
 }
 

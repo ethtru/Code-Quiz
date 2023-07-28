@@ -62,18 +62,19 @@ function quizBegin() {
   administerQuiz();
 }
 
-function timer() {
-  var timeInterval = setInterval(function () {
-    if (timeLeft > 1) {
-      countdown.textContent = timeLeft;
 
-      timeLeft--;
-    } else if (timeLeft === 1) {
+var timeInterval;
+
+function timer() {
+  timeLeft = 30;
+  countdown.textContent = timeLeft;
+
+  timeInterval = setInterval(function () {
+    if (timeLeft > 0) {
       countdown.textContent = timeLeft;
       timeLeft--;
     } else {
       countdown.textContent = "0";
-
       clearInterval(timeInterval);
     }
   }, 1000);
@@ -109,6 +110,12 @@ function nextQuestion() {
   } else {
     quizEndScreen();
   }
+  
+}
+
+
+function stopTimer() {
+  clearInterval(timeInterval);
 }
 
 function quizEndScreen() {
@@ -119,4 +126,5 @@ function quizEndScreen() {
     quizEnd.classList.add("hidden");
     highScores.classList.remove("hidden");
   });
+  stopTimer();
 }

@@ -97,9 +97,19 @@ function administerQuiz() {
       console.log(quizData[questionNumberIndex].answer);
       if (button.textContent === quizData[questionNumberIndex].answer) {
         console.log("You got it right");
+      } else {
+        subtractTime(5);
       }
       nextQuestion();
     });
+  }
+}
+
+function subtractTime(seconds) {
+  if (timeLeft >= seconds) {
+    timeLeft -= seconds;
+  } else {
+    timeLeft = 0;
   }
 }
 

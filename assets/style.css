@@ -105,6 +105,13 @@
     background-color: #f0ead6;
   }
 
+  #submit-button {
+    background-color: purple;
+    color: antiquewhite;
+    border-radius: 5px;
+    font-size: medium;
+  }
+
   #score-text {
     margin-left: 20px;
     color: navy;

@@ -6,6 +6,7 @@ var countdown = document.getElementById("countdown");
 var timeLeft = 30;
 var questionText = document.getElementById("question-text");
 var orderedList = document.getElementsByClassName("answers");
+var submitBtn = document.getElementById("submit-button");
 // var userChoice = //????;
 var questionNumberIndex = 0;
 
@@ -113,4 +114,9 @@ function nextQuestion() {
 function quizEndScreen() {
   quizScreen.classList.add("hidden");
   quizEnd.classList.remove("hidden");
+  submitBtn.addEventListener("click", function (event) {
+    button = event.target;
+    quizEnd.classList.add("hidden");
+    highScores.classList.remove("hidden");
+  });
 }

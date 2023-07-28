@@ -106,6 +106,11 @@ function nextQuestion() {
   if (questionNumberIndex < quizData.length) {
     presentQuestion(questionNumberIndex);
   } else {
-    console.log("Quiz completed!");
+    quizEndScreen();
   }
+}
+
+function quizEndScreen() {
+  quizScreen.classList.add("hidden");
+  quizEnd.classList.remove("hidden");
 }

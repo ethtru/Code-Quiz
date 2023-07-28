@@ -11,6 +11,7 @@ var submitBtn = document.getElementById("submit-button");
 var questionNumberIndex = 0;
 var score = document.getElementById("score-text");
 
+
 var quizData = [
   {
     question: "Javascript adds ______ to an application.",
@@ -50,6 +51,14 @@ var quizData = [
     answer: "1. End",
   },
 ];
+
+var highScoreBtn = document.getElementById("high-scores-btn");
+highScoreBtn.addEventListener("click", function(event) {
+    button = event.target;
+    welcomeScreen.classList.add("hidden");
+    quizEnd.classList.add("hidden");
+    highScores.classList.remove("hidden");
+})
 
 var startButton = document.getElementById("start-button");
 console.log(startButton);

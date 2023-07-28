@@ -16,6 +16,19 @@
     display: none;
 }
 
+#high-scores-btn {
+    background-color: purple;
+    color: antiquewhite;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+#high-scores-btn:hover {
+    background-color: darkorange;
+    color: navy;
+    cursor: pointer;
+}
+
 #welcome-text {
     color: navy;
     text-align: center;

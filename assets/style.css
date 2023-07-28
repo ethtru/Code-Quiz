@@ -125,6 +125,12 @@
     font-size: medium;
   }
 
+  #submit-button:hover {
+    background-color: darkorange;
+    color: navy;
+    cursor: pointer;
+  }
+
   #score-text {
     margin-left: 5px;
     color: navy;
@@ -158,12 +164,7 @@
     padding-bottom: 20px;
   }
 
-    
-  .highscore-buttons:hover {
-    background-color: darkorange;
-    color: navy;
-    cursor: pointer;
-}
+
 
 #go-back-btn {
     background-color: purple;
@@ -175,6 +176,12 @@
     margin-top: 10px;  
 }
 
+#go-back-btn:hover {
+    background-color: darkorange;
+    color: navy;
+    cursor: pointer;
+}
+
 #clear-btn {
     background-color: purple;
     color: antiquewhite;
@@ -183,4 +190,10 @@
     display: block;
     margin-left: 20px;
     margin-top: 10px;
+}
+
+#clear-btn:hover {
+    background-color: darkorange;
+    color: navy;
+    cursor: pointer;
 }

@@ -7,7 +7,6 @@ var timeLeft = 30;
 var questionText = document.getElementById("question-text");
 var orderedList = document.getElementsByClassName("answers");
 var submitBtn = document.getElementById("submit-button");
-// var userChoice = //????;
 var questionNumberIndex = 0;
 var score = document.getElementById("score-text");
 
@@ -89,18 +88,25 @@ function timer() {
   }, 1000);
 }
 
+
 function presentQuestion(num) {
-  questionText.textContent = quizData[num].question;
-  quizData[num].options.forEach((elem, index) => {
-    console.log(orderedList[index]);
-    orderedList[index].textContent = elem;
-  });
-}
+    const { question, options } = quizData[num];
+    questionText.textContent = question;
+  
+    for (let i = 0; i < orderedList.length; i++) {
+      orderedList[i].textContent = options[i];
+    }
+  }
 
 function administerQuiz() {
   presentQuestion(questionNumberIndex);
+
   for (var i = 0; i < orderedList.length; i++) {
-    orderedList[i].addEventListener("click", function (event) {
+    orderedList[i].addEventListener("click", answerClickHandler);
+  }
+}
+
+function answerClickHandler(event) {
       var button = event.target;
       console.log(button.textContent);
       console.log(quizData[questionNumberIndex].answer);
@@ -110,9 +116,8 @@ function administerQuiz() {
         subtractTime(5);
       }
       nextQuestion();
-    });
-  }
-}
+    };
+
 
 function subtractTime(seconds) {
   if (timeLeft >= seconds) {
@@ -137,6 +142,7 @@ function stopTimer() {
 }
 
 function quizEndScreen() {
+submitBtn.removeEventListener("click", answerClickHandler);  
   quizScreen.classList.add("hidden");
   quizEnd.classList.remove("hidden");
   score.textContent = timeLeft + " seconds";
@@ -158,3 +164,5 @@ function highScoresScreen() {
         welcomeScreen.classList.remove("hidden");
     })
 }
+
+

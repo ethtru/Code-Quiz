@@ -9,6 +9,7 @@ var orderedList = document.getElementsByClassName("answers");
 var submitBtn = document.getElementById("submit-button");
 // var userChoice = //????;
 var questionNumberIndex = 0;
+var score = document.getElementById("score-text");
 
 var quizData = [
   {
@@ -62,7 +63,6 @@ function quizBegin() {
   administerQuiz();
 }
 
-
 var timeInterval;
 
 function timer() {
@@ -109,10 +109,9 @@ function nextQuestion() {
     presentQuestion(questionNumberIndex);
   } else {
     quizEndScreen();
+    stopTimer();
   }
-  
 }
-
 
 function stopTimer() {
   clearInterval(timeInterval);
@@ -121,10 +120,10 @@ function stopTimer() {
 function quizEndScreen() {
   quizScreen.classList.add("hidden");
   quizEnd.classList.remove("hidden");
+  score.textContent = timeLeft + " seconds";
   submitBtn.addEventListener("click", function (event) {
     button = event.target;
     quizEnd.classList.add("hidden");
     highScores.classList.remove("hidden");
   });
-  stopTimer();
 }
